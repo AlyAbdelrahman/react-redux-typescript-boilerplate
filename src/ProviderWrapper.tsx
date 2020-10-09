@@ -10,10 +10,10 @@ import theme from './Theme';
 import { CssBaseline } from "@material-ui/core";
 
 const language = navigator.language.split(/[-_]/)[0]; //language without region code
-// const message = translations[0];
+const message = translations[0];
 
 const ProviderWrapper: React.FC<any> = ({ children , store }) => (
-  <IntlProvider locale={language} key="en" >
+  <IntlProvider locale={language} key={language} messages={message}>
     <Provider store={store}>
       <BrowserRouter basename="/NewProject">
         <ThemeProvider theme={theme}>
